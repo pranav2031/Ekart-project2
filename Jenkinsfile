@@ -42,10 +42,11 @@ pipeline {
         }
 
         stage('OWASP Dependency Check') {
-                steps {
-                sh "dependency-check.sh --project EKART --scan ."
+            steps {
+                dependencyCheck additionalArguments: '--project EKART --scan .', DC: 'Default'
             }
         }
+
         
 
         stage('Build') {
