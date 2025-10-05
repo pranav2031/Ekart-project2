@@ -41,11 +41,11 @@ pipeline {
             }
         }
 
-        stage('OWASP Dependency Check') {
-            steps {
-                dependencyCheck additionalArguments: '--project EKART --scan .', DC: 'Default'
-            }
-        }
+       stage('OWASP Dependency Check') {
+    steps {
+        dependencyCheck additionalArguments: '--project EKART --scan .', odcInstallation: 'Default'
+    }
+}
 
         
 
